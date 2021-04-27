@@ -4,7 +4,7 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.integer :number, null: false
       t.text :name, null: false
       t.text :mail
-      t.text :birthday
+      t.date :birthday
       t.text :comment
 
       t.boolean :administrator, null: false, default: false

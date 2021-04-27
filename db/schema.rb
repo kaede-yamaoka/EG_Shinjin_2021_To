@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_062426) do
     t.integer "number", null: false
     t.text "name", null: false
     t.text "mail"
-    t.text "birthday"
+    t.date "birthday"
     t.text "comment"
     t.boolean "administrator", default: false, null: false
     t.datetime "created_at", precision: 6, null: false

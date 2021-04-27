@@ -1,0 +1,33 @@
+<table>
+
+    <tr>
+        <th><%= form.label :number, "番号" %></th>
+        <td><%= form.text_field :number, size: 8 %></td>
+    </tr>
+
+    <tr>
+        <th><%= form.label :name, "名前" %></th>
+        <td><%= form.text_field :name %></td>
+    </tr>
+
+    <tr>
+        <th><%= form.label :mail, "メールアドレス" %></th>
+        <td><%= form.text_field :mail %></td>
+    </tr>
+
+    <tr>
+        <th><%= form.label :birthday, "誕生日", for: "member_birthday_1i" %></th>
+        <td><%= form.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true %></td>
+    </tr>
+
+    <tr>
+        <th><%= form.label :comment, "コメント" %></th>
+        <td><%= form.text_field :comment %></td>
+    </tr>
+
+    <tr>
+        <th>管理者権限</th>
+        <td><%= form.check_box :administrator %><%= form.label :administrator, "管理者" %></td>
+    </tr>
+
+</table>

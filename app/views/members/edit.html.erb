@@ -1,0 +1,6 @@
+<h3>ユーザ情報編集</3>
+
+<%= form_for @member do |form| %>
+    <%= render "form", form: form %>
+    <div style="text-align:center;"><%= form.submit "更新", class: "button" %></div>
+<% end %>

@@ -1,0 +1,6 @@
+<h3>ユーザ新規登録</h3>
+
+<%= form_for @member do |form| %>
+    <%= render "form", form: form %>
+    <div style="text-align:center;"><%= form.submit "登録", class: "button" %></div>
+<% end %>
