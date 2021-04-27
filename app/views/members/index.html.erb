@@ -1,0 +1,40 @@
+<h3>ユーザ一覧</h3>
+
+<div class="search-container">
+    <%= form_tag :search_members, method: :get, class: "search" do %>
+        <%= text_field_tag "q", params[:q] %>
+        <%= submit_tag "検索", class: "search-button" %>
+    <% end %>
+</div>
+
+<div class="container">
+    <%= link_to "新規登録", :new_member, {class: "button"} %>
+</div>
+
+<% if @members.present? %>
+    <table>
+        <tr>
+            <th>番号</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+            <th>誕生日</th>
+            <th>コメント</th>
+            <th>操作</th>
+        </tr>
+        <% @members.each do |member| %>
+            <tr>
+                <td><%= member.number %></td>
+                <td><%= link_to member.name, member %></td>
+                <td><%= member.mail %></td>
+                <td><%= member.birthday %></td>
+                <td><%= member.comment %></td>
+                <td>
+                    <%= link_to "編集", [:edit, member] %> |
+                    <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+<% else %>
+    <p>ユーザ情報はありません。</p>
+<% end %>

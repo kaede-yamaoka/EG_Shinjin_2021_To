@@ -1,0 +1,45 @@
+<h3>ユーザ詳細</h3>
+
+<div class="container">
+    <%= link_to "編集", [:edit, @member], {class: "button"} %>
+</div>
+
+<table>
+
+    <tr>
+        <th width="200">番号</th>
+        <td><%= @member.number %></td>
+    </tr>
+
+    <tr>
+        <th>名前</th>
+        <td><%= @member.name %></td>
+    </tr>
+
+    <tr>
+        <th>メールアドレス</th>
+        <td><%= @member.mail %></td>
+    </tr>
+
+    <tr>
+        <th>誕生日</th>
+        <td><%= @member.birthday %></td>
+    </tr>
+
+    <tr>
+        <th>コメント</th>
+        <td><%= @member.comment %></td>
+    </tr>
+
+    <tr>
+        <th>管理者権限</th>
+        <td>
+            <% if @member.administrator == true %>
+                あり
+            <% else %>
+                なし
+            <% end %>
+        </td>
+    </tr>
+
+</table>
