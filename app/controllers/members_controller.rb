@@ -8,10 +8,12 @@ class MembersController < ApplicationController
 
     end
 
+    #新規登録
     def new
        @member = Member.new(birthday: Date.new(1900,5,4))
     end
-
+   
+    #ユーザー情報編集
     def edit
        @member = Member.find(params[:id])
     end
